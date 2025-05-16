@@ -1,0 +1,16 @@
+name: Cypress Tests
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+        with:
+          start: npm start  # Запуск dev-сервера перед тестами
+          wait-on: 'http://localhost:3000'
