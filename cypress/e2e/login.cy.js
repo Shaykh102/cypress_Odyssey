@@ -23,4 +23,8 @@ describe('Login Tests', () => {
         loginPage.checkUrlAfterLogin();
         loginPage.selectTeam();
     });
+    it('Opening Conversation page', () => {
+        loginPage.WorkspacePageOpen();
+
+    })
 });

@@ -1,6 +1,7 @@
 export class LoginPage {
     visit() {
         cy.visit("https://app.odysseyai.ai");
+        cy.viewport(1920, 1080);
     }
 
     fillEmail(email) {
@@ -16,11 +17,22 @@ export class LoginPage {
     }
 
     checkUrlAfterLogin() {
-        cy.contains('Select Team', { timeout: 10000 }).should('be.visible')
+        cy.contains('Select Team', { timeout: 10000 })
+            .should('be.visible')
     }
     selectTeam() {
-        cy.get('[class^="chakra-select"]').click().select('Inteigems').should('have.value', 'inteligems')
+        cy.get('[class^="chakra-select"]')
+            .should('have.length', 4)
+            .should('contain', 'Inteligems')
 
+        cy.get('[id="team"]').select("inteligems")
+        cy.contains('Confirm').click()
+    }
+
+    WorkspacePageOpen() {
+        cy.url({ timeout: 10000 })
+            .should('include', '/inteligems')
+            .should('be.visible')
 
     }
 }
