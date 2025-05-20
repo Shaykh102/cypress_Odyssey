@@ -4,8 +4,8 @@ import { LoginPage } from '../support/pages/LoginPage';
 describe('Login Tests', () => {
     const loginPage = new LoginPage();
     const baseURL = "https://app.odysseyai.ai";
-    const email = "shamil@inteligems.io";
-    const password = "Qwerty123!@#";
+    const email = "********";
+    const password = "*******";
 
     it('Display error on invalid login', () => {
         loginPage.visit(baseURL);
