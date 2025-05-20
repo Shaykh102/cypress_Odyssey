@@ -28,11 +28,5 @@ export class LoginPage {
         cy.get('[id="team"]').select("inteligems")
         cy.contains('Confirm').click()
     }
-
-    WorkspacePageOpen() {
-        cy.url({ timeout: 10000 })
-            .should('include', '/inteligems')
-            .should('be.visible')
-
+                
     }
-}

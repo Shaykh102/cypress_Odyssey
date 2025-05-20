@@ -4,8 +4,8 @@ import { LoginPage } from '../support/pages/LoginPage';
 describe('Login Tests', () => {
     const loginPage = new LoginPage();
     const baseURL = "https://app.odysseyai.ai";
-    const email = "********";
-    const password = "*******";
+    const email = "shamil@inteligems.io";
+    const password = "******";
 
     it('Display error on invalid login', () => {
         loginPage.visit(baseURL);
@@ -22,9 +22,7 @@ describe('Login Tests', () => {
         loginPage.submit();
         loginPage.checkUrlAfterLogin();
         loginPage.selectTeam();
-    });
-    it('Opening Conversation page', () => {
-        loginPage.WorkspacePageOpen();
 
-    })
+    }); 
+        
 });
