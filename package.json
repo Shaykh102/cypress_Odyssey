@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "cypress-odyssey-tests",
     "version": "1.0.0",
     "description": "Cypress tests for OdysseyAI application",
@@ -20,3 +21,26 @@
       "cypress": "^14.3.0"
     }
   }
+=======
+  "name": "cypress-odyssey-tests",
+  "version": "1.0.0",
+  "description": "Cypress tests for OdysseyAI application",
+  "main": "index.js",
+"scripts": {
+  "test": "cypress run",
+  "cypress:open": "cypress open",
+  "start": "echo 'Add your application start command here'"
+},
+"keywords": [
+  "cypress",
+  "testing",
+  "e2e"
+],
+"author": "",
+"license": "UNLICENSED",
+"dependencies": {},
+"devDependencies": {
+  "cypress": "^14.3.0"
+}
+ }
+>>>>>>> b2c98be0c01a7f338a034af1e51b97e0b0bacb8b
