@@ -1,5 +1,5 @@
-import { LoginPage } from '../support/pages/LoginPage';
-import { Conversation_page_tests } from '../support/pages/Conversations';
+/*import { LoginPage } from '../support/pages/LoginPage';
+import { Conversation_page_tests } from '../support/pages/Conversations'; */
 
 describe('Conversations Tests', () => {
     beforeEach(() => {
@@ -8,16 +8,15 @@ describe('Conversations Tests', () => {
         });
     });
 
-    it('should do something with conversations', () => {
+    it('Default Conversation open', () => {
         // Your test code here
         // The login is already handled in beforeEach
     });
 
-    // Add more test cases as needed
 });
 
-describe('Conversation_page_tests', () => {
-    const loginPage = new LoginPage();
+/*describe('Conversation_page_tests', () => {
+   const loginPage = new LoginPage();
     const conv = new Conversation_page_tests; 
     const baseURL = "https://app.odysseyai.ai";
     const email = "shamil@inteligems.io";
@@ -36,4 +35,4 @@ describe('Conversation_page_tests', () => {
     it('Opening Conversation page', () => {
         conv.WorkspacePageOpen();
     })
-})
+}) */

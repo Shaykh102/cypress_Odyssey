@@ -1,30 +1,34 @@
 import { LoginPage } from '../support/pages/LoginPage';
 
-
 describe('Login Tests', () => {
     const loginPage = new LoginPage();
-    const baseURL = "https://app.odysseyai.ai";
-    const email = "********";
-    const password = "*******";
+    let testData;
+
+    before(() => {
+        cy.fixture('testData').then((data) => {
+            testData = data;
+        });
+    });
 
     it('Display error on invalid login', () => {
-        loginPage.visit(baseURL);
+        loginPage.visit(testData.baseUrl);
         loginPage.fillEmail('wrong@email.com');
         loginPage.fillPassword('wrongpass');
         loginPage.submit();
         cy.get('[role="alert"]').should('be.visible');
     });
 
-    it('Successfull login', () => {
-        loginPage.visit(baseURL);
-        loginPage.fillEmail(email);
-        loginPage.fillPassword(password);
+    it('Successful login', () => {
+        loginPage.visit(testData.baseUrl);
+        loginPage.fillEmail(testData.email);
+        loginPage.fillPassword(testData.password);
         loginPage.submit();
         loginPage.checkUrlAfterLogin();
         loginPage.selectTeam();
-    });
-    it('Opening Conversation page', () => {
         loginPage.WorkspacePageOpen();
+    });
 
-    })
+    /*it('Opening Conversation page', () => {
+        
+    });*/
 });
