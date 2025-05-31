@@ -13,6 +13,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Create test configuration
+        run: |
+          echo '{
+            "email": "${{ secrets.CYPRESS_TEST_EMAIL }}",
+            "password": "${{ secrets.CYPRESS_TEST_PASSWORD }}",
+            "baseUrl": "https://app.odysseyai.ai"
+          }' > cypress/fixtures/testData.json
+
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
@@ -30,4 +39,4 @@ jobs:
           # in GitHub repo → Settings → Secrets → Actions
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
