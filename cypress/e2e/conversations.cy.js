@@ -1,39 +1,25 @@
-
-
+import { Conversation_page_tests } from '../support/pages/Conversations';
 
 describe('Conversations Tests', () => {
-    beforeEach(() => {
-        cy.fixture('testData').then((testData) => {
-            cy.login(testData.email, testData.password);
+    const conv = new Conversation_page_tests();
+    let testData;
+    let users;
+
+    before(() => {
+        cy.fixture('testData').then((data) => {
+            testData = data;
+        });
+        cy.fixture('users').then((userData) => {
+            users = userData;
         });
     });
 
-    it('Default Conversation open', () => {
-        cy.url().should('include', 'inteligems.odysseyai.ai/workspace')
-            .should('be.valid');
-      
+    beforeEach(() => {
+        cy.login(users.admin.email, users.admin.password);
     });
 
-});
-
-
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
-
-    it('Opening Conversation page', () => {
+    it('Default Conversation open', () => {
         conv.WorkspacePageOpen();
-    })
-}) */
+        // Add your conversation test steps here
+    });
+});

@@ -10,7 +10,7 @@ This repository contains automated tests for the Odyssey web application. The te
    npm install
    ```
 3. Set up test configuration:
-   - Copy `cypress/fixtures/testData.template.json` to `cypress/fixtures/testData.json`
+   - Copy `cypress/fixtures/testData.json` to `cypress/fixtures/testData.json`
    - Update `testData.json` with your credentials
    ```bash
    cp cypress/fixtures/testData.template.json cypress/fixtures/testData.json
@@ -29,6 +29,9 @@ The autotests cover the following key areas of the Odyssey application:
   - Chat messages sending
   - Agents creation
 
+  -API
+   - Healthcheck of created instances
+
 ## Technical Stack
 
 - Testing Framework: Cypress 12.0+
@@ -41,7 +44,7 @@ The autotests cover the following key areas of the Odyssey application:
 ## Important 
 
 - You should create an account on https://app.odysseyai.ai/
-- Create your own `testData.json` file with your credentials (never commit this file)
+- Create your own `users.json` file with your credentials (never commit this file)
 
 ## License
 

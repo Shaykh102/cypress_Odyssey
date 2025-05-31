@@ -2,6 +2,7 @@
 cypress/videos/
 cypress/screenshots/
 cypress/fixtures/testData.json
+cypress/fixtures/users.json
 
 # Environment files
 .env
