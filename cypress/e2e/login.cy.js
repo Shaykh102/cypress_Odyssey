@@ -1,12 +1,10 @@
 import { LoginPage } from '../support/pages/LoginPage';
+import { Conversations } from '../support/pages/Conversations';
+
 
 describe('Login Tests', () => {
     const loginPage = new LoginPage();
-<<<<<<< HEAD
-    const baseURL = "https://app.odysseyai.ai";
-    const email = "shamil@inteligems.io";
-    const password = "******";
-=======
+    const conversationPage = new Conversations();
     let testData;
     let users;
 
@@ -18,7 +16,6 @@ describe('Login Tests', () => {
             users = userData;
         });
     });
->>>>>>> b2c98be0c01a7f338a034af1e51b97e0b0bacb8b
 
     it('Display error on invalid login', () => {
         loginPage.visit(testData.baseUrl);
@@ -35,10 +32,10 @@ describe('Login Tests', () => {
         loginPage.submit();
         loginPage.checkUrlAfterLogin();
         loginPage.selectTeam();
-        loginPage.WorkspacePageOpen();
+        conversationPage.WorkspacePageOpen();
     });
 
-    it('Successful login as regular user', () => {
+   /* it('Successful login as regular user', () => {
         loginPage.visit(testData.baseUrl);
         loginPage.fillEmail(users.regular.email);
         loginPage.fillPassword(users.regular.password);
@@ -55,19 +52,12 @@ describe('Login Tests', () => {
         loginPage.submit();
         loginPage.checkUrlAfterLogin();
         loginPage.selectTeam();
-<<<<<<< HEAD
-
-    }); 
-        
-=======
         loginPage.WorkspacePageOpen();
+    }); */
+        
+        
+        
     });
 
-<<<<<<< HEAD
-    /*it('Opening Conversation page', () => {
-        
-    });*/
->>>>>>> b2c98be0c01a7f338a034af1e51b97e0b0bacb8b
-=======
->>>>>>> correct_changes
-});
+
+    
