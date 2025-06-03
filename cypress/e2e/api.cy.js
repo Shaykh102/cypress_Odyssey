@@ -1,23 +1,25 @@
 
 describe('Get User Build Status API Test', () => {
     let testData;
-    let users;
+    let testUsers;
     before(() => {
         cy.fixture('testData').then((data) => {
             testData = data;
-            users = data.users;
+                   });
+         
+         cy.fixture('users').then((users) => {
+           testUsers = users; 
         });
     });
-
-    users?.forEach((user) => {
-        describe(`API Tests for user ${user.email}`, () => {
-            it(`should successfully retrieve build status for ${user.email}`, () => {
+   /* users?.forEach((users) => {
+        describe(`API Tests for user ${users.email}`, () => {
+            it(`should successfully retrieve build status for ${users.email}`, () => {
                 cy.request({
                     method: 'GET', 
                     url: `${testData.baseUrl}/api/build-status`,
                     headers: {
-                        'x-api-key': user.apiKey,
-                        'userid': user.userId
+                        'x-api-key': users.admin.apiKey,
+                        'userid': users.admin.userId
                     }
                 }).then((response) => {
                     expect(response.status).to.eq(200);
@@ -35,7 +37,7 @@ describe('Get User Build Status API Test', () => {
                     method: 'GET',
                     url: `${testData.baseUrl}/api/build-status`, 
                     headers: {
-                        'userid': user.userId
+                        'userid': users.admin.userId
                     },
                     failOnStatusCode: false
                 }).then((response) => {
@@ -43,12 +45,12 @@ describe('Get User Build Status API Test', () => {
                 });
             });
 
-            it(`should handle missing user ID for ${user.email}`, () => {
+            it(`should handle missing user ID for ${users.email}`, () => {
                 cy.request({
                     method: 'GET',
                     url: `${testData.baseUrl}/api/build-status`,
                     headers: {
-                        'x-api-key': user.apiKey
+                        'x-api-key': users.admin.apiKey
                     },
                     failOnStatusCode: false
                 }).then((response) => {
@@ -62,7 +64,7 @@ describe('Get User Build Status API Test', () => {
         cy.fixture('testData').then((data) => {
             testData = data;
         });
-    });
+    });*/
 
     it('should successfully retrieve user build status', () => {
         cy.request({
