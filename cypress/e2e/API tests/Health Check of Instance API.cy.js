@@ -37,7 +37,7 @@ describe('Health Check of Instance API ', () => {
             },
             failOnStatusCode: false
         }).then((response) => {
-            expect(response.status).to.eq(500);
+            expect(response.status).to.eq(403);
         });
     });
 
