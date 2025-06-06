@@ -2,6 +2,8 @@ export class LoginPage {
     visit() {
         cy.visit("https://app.odysseyai.ai");
         cy.viewport(1920, 1080);
+        cy.viewport(1024, 768);
+        cy.viewport(800, 600);
     }
 
     fillEmail(email) {

@@ -12,7 +12,27 @@ module.exports = defineConfig({
       openMode: 0      // Number of times to retry a failed test in interactive mode
     },
     video: true,       // Record video for CI runs
-    screenshotOnRunFailure: true
+    screenshotOnRunFailure: true,
+    browsers: [
+      {
+        name: 'chrome',
+        displayName: 'Chrome',
+        family: 'chromium',
+        channel: 'stable',
+        version: 'latest',
+        path: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+        majorVersion: 120
+      },
+      {
+        name: 'firefox',
+        displayName: 'Firefox',
+        family: 'firefox',
+        channel: 'stable',
+        version: 'latest',
+        path: 'C:\\Program Files\\Mozilla Firefox\\firefox.exe',
+        majorVersion: 122
+      }
+    ]
   },
 });
         

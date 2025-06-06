@@ -1,8 +1,7 @@
-
-import { Conversation_page_tests } from '../support/pages/Conversations';
+import { Conversations } from '../support/pages/Conversations';
 
 describe('Conversations Tests', () => {
-    const conv = new Conversation_page_tests();
+    const conv = new Conversations();
     let testData;
     let users;
 

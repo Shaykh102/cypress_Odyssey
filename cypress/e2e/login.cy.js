@@ -34,28 +34,7 @@ describe('Login Tests', () => {
         loginPage.selectTeam();
         conversationPage.WorkspacePageOpen();
     });
-
-   /* it('Successful login as regular user', () => {
-        loginPage.visit(testData.baseUrl);
-        loginPage.fillEmail(users.regular.email);
-        loginPage.fillPassword(users.regular.password);
-        loginPage.submit();
-        loginPage.checkUrlAfterLogin();
-        loginPage.selectTeam();
-        loginPage.WorkspacePageOpen();
-    });
-
-    it('Successful login as readonly user', () => {
-        loginPage.visit(testData.baseUrl);
-        loginPage.fillEmail(users.readonly.email);
-        loginPage.fillPassword(users.readonly.password);
-        loginPage.submit();
-        loginPage.checkUrlAfterLogin();
-        loginPage.selectTeam();
-        loginPage.WorkspacePageOpen();
-    }); */
-        
-        
+                                                
         
     });
 
