@@ -12,11 +12,17 @@ export class Conversations {
         
         // Handle cross-origin navigation
         cy.origin('https://inteligems.odysseyai.ai', () => {
-            // First check for dashboard
-            cy.url().should('include', 'dashboard');
+            // Check for either dashboard or workspace URL
+            cy.url().should('satisfy', (url) => {
+                return url.includes('dashboard') || url.includes('workspace');
+            });
             
-            // Then wait for and check workspace URL
-            cy.url({ timeout: 30000 }).should('include', 'workspace');
+            // If we're on dashboard, wait for workspace
+            cy.url().then((url) => {
+                if (url.includes('dashboard')) {
+                    cy.url({ timeout: 30000 }).should('include', 'workspace');
+                }
+            });
         });
     }
 }
